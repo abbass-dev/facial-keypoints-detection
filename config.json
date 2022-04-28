@@ -1,0 +1,32 @@
+{
+    "train_dataset_params": {
+        "dataset_path": "./data/training.csv",
+        "val_ratio": 0.2,
+        "loader_params": {
+            "batch_size": 24,
+            "shuffle": true,
+            "num_workers": 0,
+            "pin_memory": false
+        },
+        "input_size": [200, 200]
+    },
+    "val_dataset_params": {
+        "dataset_path": "./data/test.csv",
+        "val_ratio": 0,
+        "loader_params": {
+            "batch_size": 24,
+            "shuffle": false,
+            "num_workers": 4,
+            "pin_memory": false
+        },
+        "input_size": [200, 200]
+    },
+    "train_params": {
+        "number_of_epoch": 10,
+        "lr": 0.001,
+        "export_path": "",
+        "checkpoint_path": "",
+        "lr_policy": "step",
+        "lr_decay_iters": 10
+    }
+}

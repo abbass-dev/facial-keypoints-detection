@@ -3,6 +3,11 @@ from datasets import create_dataset
 from datasets import create_dataset
 from utils import parse_configuration
 from keyPoint import KeyPoint
+'''
+calculating model accuraccy 
+Metric: key wise distance , considered accurate prediction 
+if distance below some threshold 
+'''
 def validate():
     print('Initializing dataset...')
     #params = parse_configuration('./config.json')
@@ -10,7 +15,6 @@ def validate():
     print('The number of training samples = {0}'.format(len(train_ds.dataset)))
     print('Initializing model...')
     model = torch.load('./key2.pt')
-    model.test()
     model.device = 'cpu'
     running_metric = 0
     for image,label in val_ds:

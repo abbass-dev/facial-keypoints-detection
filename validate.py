@@ -10,6 +10,7 @@ def validate():
     print('The number of training samples = {0}'.format(len(train_ds.dataset)))
     print('Initializing model...')
     model = torch.load('./key2.pt')
+    model.test()
     model.device = 'cpu'
     running_metric = 0
     for image,label in val_ds:
